@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Server port="8005" shutdown="SHUTDOWN">
+
+    <!--APR library loader. Documentation at /docs/apr.html -->
+    <Listener className="org.apache.catalina.core.AprLifecycleListener"
+              SSLEngine="on"/>
+    <!-- JMX Support for the Tomcat server. Documentation at /docs/non-existent.html -->
+    <!-- Prevent memory leaks due to use of particular java/javax APIs -->
+    <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+    <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+    <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+
+    <!-- A "Service" is a collection of one or more "Connectors" that share
+        a single "Container" Note: A "Service" is not itself a "Container", so you
+        may not define subcomponents such as "Valves" at this level. Documentation
+        at /docs/config/service.html -->
+    <Service name="Catalina">
+
+        <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+                  maxThreads="500" minSpareThreads="40" maxIdleTime="60000"/>
+
+
+        <Connector executor="tomcatThreadPool" port="7001"
+                   enableLookups="false" redirectPort="8443"
+                   protocol="HTTP/1.1" acceptCount="300"
+                   maxPostSize="2097152" connectionTimeout="2000" useBodyEncodingForURI="true" URIEncoding="UTF-8"
+                   maxThreads="500" minSpareThreads="40" maxKeepAliveRequests="1" maxParameterCount="2000"/>
+
+
+        <Engine name="Catalina" defaultHost="localhost">
+
+            <!-- Define the default virtual host Note: XML Schema validation will
+                not work with Xerces 2.2. -->
+            <Host name="localhost" deployOnStartup="true" autoDeploy="true"
+                  unpackWARs="true" xmlValidation="false" xmlNamespaceAware="false">
+
+            </Host>
+        </Engine>
+    </Service>
+</Server>

@@ -1,0 +1,15 @@
+	/**
+#parse("operation/ibatis-javadoc.vm") 
+	 */
+#if (${operation.multiplicity} == "many")
+#if(${operation.params.size()} > 1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+#else	
+    @SuppressWarnings("unchecked")
+#end
+#else
+#if(${operation.params.size()} > 1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+#end	
+#end		 
+#parse("operation/op-signature.vm")

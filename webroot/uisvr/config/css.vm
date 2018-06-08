@@ -1,0 +1,5 @@
+#set($css_file = {"css_helloworld" : "path/to/css/file.css"})
+
+#foreach($item in $css_file.entrySet())
+   $item.key = <link charset="utf-8" rel="stylesheet" href="$imageServer.getURI("/hello/$!{item.value}")" media="all" />
+#end 

@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="${charset}" />
+	<title>${title}</title>
+	#SLITERAL($!__cssRef)
+	#parse($!__css)
+</head>
+<body>
+	<div id="container">

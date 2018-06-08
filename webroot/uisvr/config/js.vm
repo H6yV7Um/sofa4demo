@@ -1,0 +1,5 @@
+#set($js_file = {"js_helloworld" : "path/to/js/file.js"})
+
+#foreach($item in $js_file.entrySet())
+   $item.key = <script charset="utf-8" src="$imageServer.getURI("/hello/$!{item.value}")"></script>
+#end 

@@ -1,0 +1,4 @@
+~~~~~~~~~~tile~~~~~~~~~~~
+you are :  $!user.name <br>
+your id: $!user.id <br>
+your email:  $!user.email

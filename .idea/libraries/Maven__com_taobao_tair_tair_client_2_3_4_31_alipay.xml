@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.taobao.tair:tair-client:2.3.4.31-alipay">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/tair/tair-client/2.3.4.31-alipay/tair-client-2.3.4.31-alipay.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/tair/tair-client/2.3.4.31-alipay/tair-client-2.3.4.31-alipay-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/taobao/tair/tair-client/2.3.4.31-alipay/tair-client-2.3.4.31-alipay-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

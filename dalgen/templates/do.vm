@@ -1,0 +1,25 @@
+#parse("copyright.vm")
+package ${table.DOPackage};
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+#foreach($importClass in $table.doImports) 
+import $importClass;
+#end
+
+/**
+ * A data object class directly models database table <tt>$table.sqlName</tt>.
+ *
+#parse("description-java.vm")
+ */
+public class ${table.DOClassName} {
+
+#parse("do-fields.vm")
+    /**
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    }
+}

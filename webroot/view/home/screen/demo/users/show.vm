@@ -1,0 +1,4 @@
+<h2>get user<h2>
+<br>
+----------------------------------<br>
+name: $user.name      &nbsp;&nbsp;       email: $user.email

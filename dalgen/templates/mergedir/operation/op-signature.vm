@@ -1,0 +1,1 @@
+    public $operation.simpleReturnType ${operation.name}(#foreach ($param in $operation.params)#if($velocityCount > 1), #end#if(${param.simpleJavaType}=="List")List<?>#else${param.simpleJavaType}#end ${param.name}#end)

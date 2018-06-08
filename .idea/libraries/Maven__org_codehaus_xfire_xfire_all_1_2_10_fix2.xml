@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.codehaus.xfire:xfire-all:1.2.10_fix2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/xfire/xfire-all/1.2.10_fix2/xfire-all-1.2.10_fix2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/xfire/xfire-all/1.2.10_fix2/xfire-all-1.2.10_fix2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/xfire/xfire-all/1.2.10_fix2/xfire-all-1.2.10_fix2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

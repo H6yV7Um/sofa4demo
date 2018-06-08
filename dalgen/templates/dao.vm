@@ -1,0 +1,37 @@
+#parse("copyright.vm")
+package ${table.DAOPackage};
+
+#set ($accessClass = "org.springframework.dao.DataAccessException")
+#foreach($importClass in $table.daoImports)
+#if($importClass != $accessClass)
+import $importClass;
+#end
+#end
+
+/**
+ * A dao interface provides methods to access database table <tt>$table.sqlName</tt>.
+ *
+#parse("description-java.vm")
+ */
+public interface ${table.DAOClassName} {
+#set ($daoName = ${table.DAOClassName})
+
+##parse("dao-name.vm")
+#foreach($operation in $table.operations)
+	/**
+	#if(${operation.templateSuffix}=="update")
+ *  Update DB table <tt>$table.sqlName</tt>.
+	 #elseif(${operation.templateSuffix}=="delete")
+ *  Delete records from DB table <tt>$table.sqlName</tt>.
+	 #elseif(${operation.templateSuffix}=="insert")
+ *  Insert one <tt>$table.DOClassName</tt> object to DB table <tt>$table.sqlName</tt>, return primary key
+	 #else
+ *  Query DB table <tt>$table.sqlName</tt> for records.
+	 #end
+*
+#parse("operation/op-javadoc.vm")	 
+	 */	 
+#parse("operation/op-signature.vm");
+
+#end
+}

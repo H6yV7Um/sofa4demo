@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>com.alipay.mvcdemo</groupId>
+        <artifactId>mvcdemo-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alipay.mvcdemo</groupId>
+    <artifactId>mvcdemo-web-home</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Alipay mvcdemo-web-home</name>
+    <description>Alipay mvcdemo-web-home</description>
+    <url>http://home.alipay.net</url>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <!-- mvc depends -->
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-sofa-env-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-alipay-toolbox-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-toolbox-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-validation-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-tair-newsession-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-widget-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-uisvr-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-json-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-resource-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-alipay-security-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-security-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.sofa.web.mvc</groupId>
+            <artifactId>mvc-alipay-auth-plugin</artifactId>
+        </dependency>
+        <!-- project depends -->
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-biz-shared</artifactId>
+        </dependency>
+        <!-- session -->
+        <dependency>
+            <groupId>com.alipay.session</groupId>
+            <artifactId>alipay-session-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.session</groupId>
+            <artifactId>alipay-session-zcache</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.alipay.sofa.service</groupId>
+                    <artifactId>sofa-service-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.zdataconsole</groupId>
+            <artifactId>zdataconsole-common-service-facade</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.zcache</groupId>
+            <artifactId>zcache</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao.common.smonitor</groupId>
+            <artifactId>smonitor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao.common.monitor</groupId>
+            <artifactId>common-monitor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao.tair</groupId>
+            <artifactId>tair-client</artifactId>
+        </dependency>
+        <!-- lib depends -->
+        <dependency>
+            <groupId>com.alipay.velocity</groupId>
+            <artifactId>sketch-jar</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.spy</groupId>
+            <artifactId>spymemcached</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.el</groupId>
+            <artifactId>jboss-el</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.common</groupId>
+            <artifactId>alipay-common-webx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.service</groupId>
+            <artifactId>alipay-service-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.sojo</groupId>
+            <artifactId>sojo-optional</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.common</groupId>
+            <artifactId>alipay-common-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <!-- xss -->
+        <dependency>
+            <groupId>org.w3c.css</groupId>
+            <artifactId>sac</artifactId>
+        </dependency>
+        <!-- xss -->
+        <dependency>
+            <groupId>fasttext</groupId>
+            <artifactId>fasttext</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.common</groupId>
+            <artifactId>tracer</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.taobao.remoting</groupId>
+            <artifactId>network.core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>hessian</groupId>
+            <artifactId>hessian</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.xfire</groupId>
+            <artifactId>xfire-all</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

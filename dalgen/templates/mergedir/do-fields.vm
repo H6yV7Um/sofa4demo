@@ -1,0 +1,39 @@
+    //========== properties ==========
+#foreach($column in $table.columns) 
+
+	/**
+	 * This property corresponds to db column <tt>${column.sqlName}</tt>.
+	 */
+	private $column.simpleJavaType $column.variableName;
+#end
+
+    //========== getters and setters ==========
+#foreach($column in $table.columns) 
+
+    /**
+     * Getter method for property <tt>$column.variableName</tt>.
+     *
+     * @return property value of $column.variableName
+     */
+	public $column.simpleJavaType ${column.getterName}() {
+#set( $currencyValue = ".getCurrencyValue()" )
+#set( $currency = ".getCurrency()" )
+#if ($column.simpleJavaType == "MultiCurrencyMoney") 
+		if ($column.variableName != null && $column.variableName$currencyValue == null
+            && $column.variableName$currency == null)  {
+           this.$column.variableName = null;
+		}
+#end
+		return $column.variableName;
+	}
+	
+	/**
+	 * Setter method for property <tt>$column.variableName</tt>.
+	 * 
+	 * @param $column.variableName value to be assigned to property $column.variableName
+     */
+	public void ${column.setterName}($column.simpleJavaType $column.variableName) {
+        this.$column.variableName = $column.variableName;
+	}
+#end
+

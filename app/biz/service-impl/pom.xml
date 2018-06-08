@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.alipay.mvcdemo</groupId>
+        <artifactId>mvcdemo-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alipay.mvcdemo</groupId>
+    <artifactId>mvcdemo-biz-service-impl</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Alipay mvcdemo-biz-service-impl</name>
+    <description>Alipay mvcdemo</description>
+    <url>http://home.alipay.com</url>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- project depends -->
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-common-service-facade</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-biz-shared</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

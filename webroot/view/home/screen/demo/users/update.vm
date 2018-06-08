@@ -1,0 +1,11 @@
+<h2>edit  user info action  success page!<h2>
+<br>
+----------------------------------<br>
+your id : $user.id <br>
+
+your name : $user.name <br>
+
+your email : $user.email <br>
+
+
+

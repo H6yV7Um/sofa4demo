@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://schema.alipay.com/sofa/schema/service"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byName">
+    <sofa:reference id="sampleTrService" interface="com.alipay.mvcdemo.SampleTrService">
+        <sofa:binding.tr>
+            <sofa:global-attrs timeout="5000"/>
+        </sofa:binding.tr>
+    </sofa:reference>
+</beans>

@@ -1,0 +1,1 @@
+   	 *  @see ${table.qualifiedDAOClassName}#${operation.name}(#foreach($param in $operation.params)#if($velocityCount > 1), #end${param.simpleJavaType}#end)

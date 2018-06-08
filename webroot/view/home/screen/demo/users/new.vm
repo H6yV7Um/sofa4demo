@@ -1,0 +1,9 @@
+<h2>new user form page<h2>
+<br>
+----------------------------------<br>
+
+<form  method="post" action="/demo/users.htm"/>
+<input type="text" name="name" value="$user.name"/>
+<input type="text" name="email" value="$user.email"/>
+<input type="submit" name="submit"/>
+</form>

@@ -1,0 +1,10 @@
+<h2> get the edition page of a user<h2>
+<br>
+----------------------------------<br>
+<form  method="post" action="/demo/users/123.htm"/>
+<input type="hidden" name="_method" value="put"/>
+<input type="hidden" name="id" value="$user.id"/>
+<input type="text" name="name" value="$user.name"/>
+<input type="text" name="email" value="$user.email"/>
+<input type="submit" name="submit"/>
+</form>

@@ -1,0 +1,8 @@
+<h2>get users list page<h2>
+ <br>
+----------------------------------<br>
+#foreach($user in $users)
+     $user.name  &nbsp;| &nbsp;     $user.email <br>
+#end
+
+

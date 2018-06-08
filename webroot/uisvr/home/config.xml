@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<default path="/home">
+		<vars>
+			<title>主体名称</title>
+		</vars>
+	</default>
+
+	<page path="/home/sample.vm">
+		<css>
+			<ref path="$css_helloworld"/>
+		</css>
+		<js>
+			<ref path="$js_helloworld"/>
+		</js>
+		<vars>
+			<pagevar>test</pagevar>
+			<layout>home/layout/sample.vm</layout>
+		</vars>
+	</page>
+
+	<page path="/home/newSample.vm">
+		<css>
+			<ref path="$css_helloworld"/>
+		</css>
+		<js>
+			<ref path="$js_helloworld"/>
+		</js>
+		<vars>
+			<pagevar>test</pagevar>
+			<layout>home/layout/sample.vm</layout>
+		</vars>
+	</page>
+</config>

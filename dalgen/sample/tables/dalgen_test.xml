@@ -1,0 +1,203 @@
+<table sqlname="dalgen_test">
+
+	<!-- =================下面是比较简单的用法================= -->
+	<!-- 最简单的插入 -->
+	<operation name="insert">
+		<sql>
+			insert into dalgen_test (id,name,school,gmt_create,age)
+			values(?,?, ?, now(), ?)
+		</sql>
+	</operation>
+	<!-- 删除 -->
+	<operation name="delete">
+		<sql>
+			delete from dalgen_test where name = ?
+		</sql>
+	</operation>
+	<!-- 修改 -->
+	<operation name="update">
+		<sql>
+			update dalgen_test set age = ? where name = ?
+		</sql>
+	</operation>
+	<!-- 查询单条 -->
+	<operation name="select">
+		<sql>
+			select * from dalgem_test where name = ?
+		</sql>
+	</operation>
+	<!-- 批量查询 -->
+	<operation name="selectList" multiplicity="many">
+		<sql>
+			select * from dalgen_test where name = ?
+		</sql>
+	</operation>
+	<!-- 分页查询 -->
+	<operation name="selectWithPaging" multiplicity="many"
+		paging="true">
+		<sql>
+			select * from dalgen_test where age = ? and school = ? order by
+			name
+		</sql>
+	</operation>
+
+	<!-- =================下面是一些比较特殊的用法================ -->
+
+	<!-- 使用sqlmap标签，直接生成最终的sqlmap配置 -->
+	<operation name="insertSqlmap">
+		<sql>
+			INSERT INTO dalgen_test (id,name,school,gmt_create,age)
+			VALUES(?,?, ?, ?, ?)
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			insert into dalgen_test (id,name,school,gmt_create,age) values(#id#, #name#,  #school#, now(), #age#)  
+			]]>
+		</sqlmap>
+	</operation>
+	<!-- 支持no wait语法 -->
+	<operation name="selectNoWaitSql">
+		<sql>
+			select id,name from dalgen_test for update nowait
+		</sql>
+	</operation>
+	<!-- 返回值是List<Map>形式 -->
+	<operation name="selectNoWaitSqlForListMap" resultClass="java.util.HashMap"
+		multiplicity="many">
+		<sql>
+			select id,name from dalgen_test for update nowait
+		</sql>
+	</operation>
+	<!-- 返回值是Map形式 -->
+	<operation name="selectNoWaitSqlForMap" resultClass="java.util.HashMap">
+		<sql>
+			select id,name from dalgen_test for update nowait
+		</sql>
+	</operation>
+	<!-- 自定义入参+自定义sqlmap（动态标签） -->
+	<operation name="selectDiffParam">
+		<extraparams>
+			<param name="endTime" javatype="java.util.Date" />
+		</extraparams>
+		<sql>
+			<![CDATA[
+			select * from dalgen_test where name = ?
+			]]>
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			select * from dalgen_test where  gmt_create<#endTime#
+			<dynamic>
+				<isNotEmpty property="endTime" prepend="and"> 
+					1=1
+				</isNotEmpty>
+			</dynamic>
+			]]>
+		</sqlmap>
+	</operation>
+	<!-- ibatis的动态查询需要使用sqlmap标签满足 -->
+	<operation name="selectDynamic">
+		<sql>
+			<![CDATA[
+			select * from dalgen_test 
+			]]>
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			select * from dalgen_test where 1=1 
+			<dynamic>
+				<isNotEmpty property="endTime" prepend="and"> 
+					1=1
+				</isNotEmpty>
+			</dynamic>
+			]]>
+		</sqlmap>
+	</operation>
+	<operation name="selectCData">
+		<sql>
+			<![CDATA[
+			select * from dalgen_test where gmt_create = ?
+			]]>
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			select * from dalgen_test where 1=1 
+			<dynamic>
+				<isNotEmpty property="endTime" prepend="and"> 
+					 ${cdata-start} 
+					gmt_create >=#endTime#
+					 ${cdata-end} 
+				</isNotEmpty>
+			</dynamic>
+			]]>
+		</sqlmap>
+	</operation>
+	<!-- mysql的时间函数 -->
+	<operation name="selectCurrent">
+		<sql>
+			select gmt_create from dalgen_test
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			select current_timestamp()
+			]]>
+		</sqlmap>
+	</operation>
+	<!-- mysql的concat函数 -->
+	<operation name="selectConcat">
+		<sql>
+			select id,name from dalgen_test where name like
+			CONCAT(CONCAT('%', ?), '%')
+		</sql>
+	</operation>
+	<!-- 特殊的带$$符的ibatis语法 -->
+	<operation name="selectForUpdate">
+
+		<sql>
+			select id,name from dalgen_test where name = ?
+		</sql>
+		<sqlmap>
+			<![CDATA[
+			select id,name from dalgen_test where name = #name#  for update wait $count$
+			]]>
+		</sqlmap>
+	</operation>-->
+	
+	<operation name="selectByQuery" multiplicity="many" paging="true">
+        <extraparams>
+            <param name="startTime" javatype="java.util.Date" />
+            <param name="endTime" javatype="java.util.Date" />
+        </extraparams>
+        <sql>
+            <![CDATA[
+			select * from dalgen_test where name = ?
+			]]>
+        </sql>
+        <sqlmap>
+            <![CDATA[
+            select 
+        	*
+            from dalgen_test
+            where 1 = 1
+                <dynamic>
+                    <isNotNull prepend="AND" property="bizNo">
+                        biz_no = #bizNo#
+                    </isNotNull>
+
+                    <isNotNull prepend="AND" property="startTime">
+                        ${cdata-start}
+                        update_date >= #startTime#
+                        ${cdata-end}
+                    </isNotNull>
+
+                    <isNotNull prepend="AND" property="endTime">
+                        ${cdata-start}
+                        update_date <= #endTime#
+                        ${cdata-end}
+                    </isNotNull>
+                </dynamic>
+            ]]>
+        </sqlmap>
+    </operation>
+
+</table>

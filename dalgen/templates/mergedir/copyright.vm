@@ -1,0 +1,8 @@
+#set($time = $plugin.genTime.toString())
+#set($start = 0)
+#set($start = $time.length() - 4)
+#set($year = $time.substring($start, $time.length()))
+/**
+ * Alipay.com Inc.
+ * Copyright (c) 2004-$year All Rights Reserved.
+ */

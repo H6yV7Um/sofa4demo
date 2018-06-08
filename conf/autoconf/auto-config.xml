@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+    <group name="basic">
+        <property name="app_name" defaultValue="mvcdemo" description="应用名"/>
+        <property name="app_root" defaultValue="/home/admin" description="开放式平台的根目录"/>
+        <property name="app_run" defaultValue="${app_root}/mvcdemo-run" description="开放式平台的运行目录"/>
+        <property name="log_root" defaultValue="${app_root}/logs" description="开放式平台的日志目录"/>
+        <property name="log_level" defaultValue="warn" description="应用的日志级别"/>
+    </group>
+        <group name="web">
+        <property name="domain_name" defaultValue="@domainname@" description="应用的域名"/>
+        <property name="mvc_io_encoding" defaultValue="UTF-8" description="默认请求响应，页面模板处理编码集"/>
+        <property name="web_root" defaultValue="${app_root}/build/webroot" description="应用的模板的根目录"/>
+        <property name="web_templates" defaultValue="${web_root}/view" description="应用的模板的根目录"/>
+        <property name="prod_ui_template" defaultValue="${web_root}/uisvr" description="uisvr的根目录"/>
+    </group>
+    <group name="session">
+        <property name="zdrmdata_rest_url" defaultValue="http://zdrmdata.stable.alipay.net" description="drm地址"/>
+        <property name="dbmode" defaultValue="@dbmode@" description="环境信息"/>
+        <property name="session_hostname" defaultValue="mvcdemo" description="session识别的应用名"/>
+        <property name="session_domain" defaultValue="alipay.net" description="session回写cookie的域名"/>
+        <property name="session_maxInactiveInterval" defaultValue="600" description="session超时时长"/>
+        <property name="session_access.rule" defaultValue="remote" description="存储方式"/>
+        <property name="session_cookieName" defaultValue="ALIPAYJSESSIONID" description="cookie name"/>
+        <property name="session_globalStrategy" defaultValue="merge" description="冲突解决策略"/>
+        <property name="session_store" defaultValue="tair" description="存储组件"/>
+        <property name="session_ldc_mode" defaultValue="true" description=""/>
+        <property name="tairsession_localConfPath" defaultValue="${app_root}/conf/zdal" description="tair配置存放路径"/>
+        <property name="tairsession_zdalConsoleUrl" defaultValue="http://zdataconsole.stable.alipay.net:8080"
+                  description="zdata 地址"/>
+        <property name="session_newSession" defaultValue="true" description="是否使用session2"/>
+        <property name="session_localConfPath" defaultValue="${app_root}/conf/session" description="存储session白名单地址"/>
+    </group>
+        
+    <script>
+        <generate template="sofa-config.properties" destfile="../config/sofa-config.properties"
+                  charset="UTF-8"/>
+    </script>
+        <script>
+        <generate template="tenginx-conf/t-alipay-tengine.conf" destfile="../config/tenginx-conf/t-alipay-tengine.conf"
+                  charset="UTF-8"/>
+    </script>
+    </config>

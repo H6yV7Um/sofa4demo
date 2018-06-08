@@ -1,0 +1,7 @@
+	/**
+#parse("operation/ibatis-javadoc.vm") 
+	 */
+#if(${operation.params.size()} > 1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+#end	 
+#parse("operation/op-signature.vm")

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: com.alipay.mvcdemo
+Bundle-Version: 1.0.0
+Bundle-Vendor: Alipay
+Eclipse-LazyStart: false
+Web-ContextPath: /
+Require-Plugin: com.alipay.sofa.rpc,com.alipay.msgbroker.client,com.alipay.sofa.platform.xts,com.alipay.sofa.platform.zdal
+Deployer: com.alipay.sofa.runtime

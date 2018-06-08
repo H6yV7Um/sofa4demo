@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<default head="/theme/sample" foot="/theme/sample">
+		<css></css>
+		<js></js>
+		<vars>
+			<title>title</title>
+			<charset>UTF-8</charset>
+			<contentType>text/html</contentType>
+			<optimize>true</optimize>
+		</vars>
+	</default>
+</config>

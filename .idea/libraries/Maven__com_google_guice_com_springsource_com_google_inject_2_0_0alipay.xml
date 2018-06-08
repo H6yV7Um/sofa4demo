@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.google.guice:com.springsource.com.google.inject:2.0.0alipay">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/guice/com.springsource.com.google.inject/2.0.0alipay/com.springsource.com.google.inject-2.0.0alipay.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/guice/com.springsource.com.google.inject/2.0.0alipay/com.springsource.com.google.inject-2.0.0alipay-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/guice/com.springsource.com.google.inject/2.0.0alipay/com.springsource.com.google.inject-2.0.0alipay-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

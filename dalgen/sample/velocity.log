@@ -1,0 +1,90 @@
+2018-06-07 19:09:19,406 - Log4JLogChute initialized using file 'velocity.log'
+2018-06-07 19:09:19,406 - Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+2018-06-07 19:09:19,406 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2018-06-07 19:09:19,406 - Trying to use logger class middlegen.DontCloseLog4JLogSystem
+2018-06-07 19:09:19,406 - Using logger class middlegen.DontCloseLog4JLogSystem
+2018-06-07 19:09:19,407 - Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+2018-06-07 19:09:19,409 - ResourceLoader instantiated: middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,410 - Do unicode file recognition:  false
+2018-06-07 19:09:19,410 - FileResourceLoader : adding path '../templates/mergedir'
+2018-06-07 19:09:19,413 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+2018-06-07 19:09:19,414 - Loaded System Directive: org.apache.velocity.runtime.directive.CMSParse
+2018-06-07 19:09:19,414 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2018-06-07 19:09:19,415 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2018-06-07 19:09:19,415 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2018-06-07 19:09:19,415 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2018-06-07 19:09:19,416 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2018-06-07 19:09:19,429 - Created '20' parsers.
+2018-06-07 19:09:19,431 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2018-06-07 19:09:19,431 - KindFileResourceLoader : file loader failed to load: VM_global_library.vm
+2018-06-07 19:09:19,432 - KindFileResourceLoader : classpath loader failed to load: VM_global_library.vm
+2018-06-07 19:09:19,432 - Velocimacro : adding VMs from VM library : VM_global_library.vm
+2018-06-07 19:09:19,432 - KindFileResourceLoader : file loader failed to load: VM_global_library.vm
+2018-06-07 19:09:19,432 - KindFileResourceLoader : classpath loader failed to load: VM_global_library.vm
+2018-06-07 19:09:19,434 - ResourceManager : found VM_global_library.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,434 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2018-06-07 19:09:19,434 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2018-06-07 19:09:19,434 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2018-06-07 19:09:19,434 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2018-06-07 19:09:19,509 - ResourceManager : found description-xml.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,522 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. middlegen [line 1, column 53]
+2018-06-07 19:09:19,523 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. middlegen [line 1, column 103]
+2018-06-07 19:09:19,529 - ResourceManager : found ibatis-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,532 - ResourceManager : found copyright.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,541 - ResourceManager : found description-java.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,542 - ResourceManager : found operation/op-insert.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,544 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,545 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,547 - ResourceManager : found operation/opbody-insert.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,547 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-insert.vm [line 3, column 53]
+2018-06-07 19:09:19,547 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-insert.vm [line 3, column 103]
+2018-06-07 19:09:19,548 - ResourceManager : found operation/opbody-insert-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,549 - ResourceManager : found operation/op-delete.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,550 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,551 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,553 - ResourceManager : found operation/opbody-delete.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,554 - ResourceManager : found operation/op-update.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,555 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,556 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,558 - ResourceManager : found operation/opbody-update.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,558 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-update.vm [line 3, column 53]
+2018-06-07 19:09:19,558 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-update.vm [line 3, column 103]
+2018-06-07 19:09:19,560 - ResourceManager : found operation/opbody-update-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,562 - ResourceManager : found operation/op-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,563 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,564 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,566 - ResourceManager : found operation/opbody-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,567 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 53]
+2018-06-07 19:09:19,567 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 103]
+2018-06-07 19:09:19,568 - ResourceManager : found operation/opbody-select-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,570 - ResourceManager : found operation/op-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,570 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,571 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,572 - ResourceManager : found operation/opbody-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,573 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 53]
+2018-06-07 19:09:19,573 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 103]
+2018-06-07 19:09:19,574 - ResourceManager : found operation/opbody-select-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,576 - ResourceManager : found operation/op-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,577 - ResourceManager : found operation/ibatis-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,578 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,579 - ResourceManager : found operation/opbody-select.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,579 - Left side (${table.getTableConfig().bConfidentiality()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 53]
+2018-06-07 19:09:19,579 - Left side (${table.getTableConfig().bIntegrity()}) of '==' operation has null value. If a reference, it may not be in the context. Operation not possible. operation/opbody-select.vm [line 3, column 103]
+2018-06-07 19:09:19,580 - ResourceManager : found operation/opbody-select-old.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,592 - ResourceManager : found copyright.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,593 - ResourceManager : found description-java.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,594 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,595 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,596 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,597 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,598 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,600 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,602 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,603 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,604 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,605 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,606 - ResourceManager : found operation/op-javadoc.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,607 - ResourceManager : found operation/op-signature.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,610 - ResourceManager : found copyright.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,611 - ResourceManager : found description-java.vm with loader middlegen.KindFileResourceLoader
+2018-06-07 19:09:19,614 - ResourceManager : found do-fields.vm with loader middlegen.KindFileResourceLoader

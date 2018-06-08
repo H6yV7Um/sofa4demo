@@ -1,0 +1,43 @@
+<table sqlname="student">
+
+    <!-- =================下面是比较简单的用法================= -->
+    <!-- 最简单的插入 -->
+    <operation name="insert">
+        <sql>
+            insert into student (name,school)
+            values(?,?)
+        </sql>
+    </operation>
+    <!-- 删除 -->
+    <operation name="delete">
+        <sql>
+            delete from student where id = ?
+        </sql>
+    </operation>
+    <!-- 修改 -->
+    <operation name="update">
+        <sql>
+            update student set name = ? where id = ?
+        </sql>
+    </operation>
+    <!-- 查询单条 -->
+    <operation name="select">
+        <sql>
+            select * from student where id = ?
+        </sql>
+    </operation>
+    <!-- 批量查询 -->
+    <operation name="selectList" multiplicity="many">
+        <sql>
+            select * from student where school = ?
+        </sql>
+    </operation>
+    <!-- 分页查询 -->
+    <operation name="selectWithPaging" multiplicity="many"
+               paging="true">
+        <sql>
+            select * from student where school = ? order by
+            name
+        </sql>
+    </operation>
+</table>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mvcdemo-biz-service-impl" />
+        <module name="mvcdemo-biz-shared" />
+        <module name="mvcdemo-common-dal" />
+        <module name="mvcdemo-common-service-facade" />
+        <module name="mvcdemo-common-service-integration" />
+        <module name="mvcdemo-common-util" />
+        <module name="mvcdemo-core-model" />
+        <module name="mvcdemo-core-service" />
+        <module name="mvcdemo-test" />
+        <module name="mvcdemo-web-home" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mvcdemo-biz-service-impl" target="1.8" />
+      <module name="mvcdemo-biz-shared" target="1.8" />
+      <module name="mvcdemo-common-dal" target="1.8" />
+      <module name="mvcdemo-common-service-facade" target="1.6" />
+      <module name="mvcdemo-common-service-integration" target="1.8" />
+      <module name="mvcdemo-common-util" target="1.8" />
+      <module name="mvcdemo-core-model" target="1.8" />
+      <module name="mvcdemo-core-service" target="1.8" />
+      <module name="mvcdemo-test" target="1.8" />
+      <module name="mvcdemo-web-home" target="1.8" />
+      <module name="sofaWebDemo" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

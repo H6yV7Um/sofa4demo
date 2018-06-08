@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       classpath:/org/springframework/beans/factory/xml/spring-beans-3.0.xsd"
+       default-autowire="byName">
+
+    <!-- id 与 app 名字保持一致 -->
+    <bean id="mvcdemo" class="com.alipay.zdal.client.config.bean.ZdalAppBean">
+        <property name="appName" value="mvcdemo"/>
+        <property name="dbmode" value="dev"/>
+        <property name="idcName" value="gz00"/>
+        <property name="appDataSourceList">
+            <list>
+                <ref bean="appDataSource"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="appDataSource" class="com.alipay.zdal.client.config.bean.AppDataSourceBean">
+        <!-- 与 sofa:zdal-jdbc 中的 appDataSourceName 保持一致 -->
+        <property name="appDataSourceName" value="student"/>
+        <property name="dataBaseType" value="MYSQL"/>
+        <property name="zoneError" value="LOG"/>
+        <property name="physicalDataSourceSet">
+            <set>
+                <ref bean="physicalDataSource00"/>
+            </set>
+        </property>
+        <property name="groupDataSourceRuleMap">
+            <map>
+                <!-- 一个逻辑分组，master_00代表一个逻辑库，r10w10，分别代表读权重和写权重，10代表可读或可写 -->
+                <entry key="group_0" value="master_00:r10w10"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 物理数据源 -->
+    <bean id="physicalDataSource00" class="com.alipay.zdal.client.config.bean.PhysicalDataSourceBean">
+        <property name="type" value="MYSQL"/>
+        <property name="name" value="student"/>
+        <property name="userName" value="yinywf"/>
+        <!-- 明文 tutorial -->
+        <property name="password" value="3960958a4394f3b00bf3cb262721f0df"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/dalgen"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="minConn" value="2"/>
+        <property name="maxConn" value="5"/>
+        <property name="blockingTimeoutMillis" value="500"/>
+        <property name="idleTimeoutMinutes" value="60"/>
+        <property name="queryTimeout" value="0"/>
+        <property name="logicDbNameSet">
+            <set>
+                <value>master_00</value>
+            </set>
+        </property>
+        <property name="connectionProperties">
+            <map>
+                <entry key="connectTimeout" value="500"/>
+                <entry key="socketTimeout" value="5000"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

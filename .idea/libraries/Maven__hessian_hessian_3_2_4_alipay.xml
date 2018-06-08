@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: hessian:hessian:3.2.4.alipay">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/hessian/hessian/3.2.4.alipay/hessian-3.2.4.alipay.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/hessian/hessian/3.2.4.alipay/hessian-3.2.4.alipay-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/hessian/hessian/3.2.4.alipay/hessian-3.2.4.alipay-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,108 @@
+##将输入有误的表单字段高亮，支持自定义的高亮style，默认是fm-error
+#macro( highLightField $selfStyle)
+    #if($stringUtil.isBlank($selfStyle))
+        #set ($style = "fm-error")
+    #else
+        #set ($style = $selfStyle)
+    #end
+
+    #if($!status.isError()) $style #end
+#end
+
+##显示表单字段的错误提示，支持默认提示
+#macro( showFieldErrorMessage $defaultMsg)
+    #if($!status.isError())
+    <div class="fm-explain">#getErrorMessage()</div>
+    #elseif($stringUtil.isNotBlank($defaultMsg))
+    <div class="fm-explain">#springMessage("$defaultMsg")</div>
+    #end
+#end
+
+#macro( showFormErrorMessage)
+    #if($!status.isError())
+    <span class="m-error">#getErrorMessage()</span>
+    #end
+#end
+
+##show error messages of properties in the form
+#macro ( showErrorMsgsBR $path $classOrStyle)
+    #if("$!springHtmlEscape" != "")
+        #set( $status = $springMacroRequestContext.getBindStatus($path, $springHtmlEscape) )
+    #else
+        #set( $status = $springMacroRequestContext.getBindStatus($path) )
+    #end
+    #foreach($error in $status.errorMessages)
+        #if($classOrStyle == "")
+        <b>${error}</b>
+        #else
+            #if($classOrStyle.indexOf(":") == -1)
+                #set($attr="class")
+            #else
+                #set($attr="style")
+            #end
+        <span ${attr}="${classOrStyle}">${error}</span>
+        #end
+    <br/>
+    #end
+#end
+
+##获得错误信息
+#macro( getErrorMessage )
+    #set($messages = $status.errorMessages)
+    #if($arrayUtil.getLength($messages) > 0)
+        $array.get($messages, 0)
+    #end
+#end
+
+##添加form token
+#macro ( addFormToken $form)
+<input type="hidden" name="$form.getTokenFieldName()" value="$form.getToken()"/>
+#end
+
+##添加隐藏字段
+#macro ( addHiddenField $form $id $name $value)
+<input type="hidden" id="$id" name="$name" value="$form.setField("$name", $stringUtil.defaultIfNull("$!value"))"/>
+#end
+
+##添加隐藏字段（对value值进行escapeHtml）
+#macro ( addHiddenFieldEscapeHtml $form $name $value)
+<input type="hidden" name="$name"
+       value="$stringEscapeUtil.escapeHtml($form.setField("$name", $stringUtil.defaultIfNull("$!value")))"/>
+#end
+
+##隐藏卡通ID前面的数字
+#macro( maskCartoonId $cartoonId)**$stringUtil.right($cartoonId, 4)#end
+
+#macro( maskRight $source $length $placeHolder)$placeHolder$stringUtil.right($source, $length)#end
+
+#macro( maskLeft $source $length $placeHolder)$stringUtil.left($source, $length)$placeHolder#end
+
+#macro( convertMoney $amount)$moneyTool.long2String($amount)#end
+
+#macro( getTotalAmount $currentAmount $chargeInfos)$amountCaculateTool.getTotalAmount($currentAmount,$chargeInfos)#end
+
+#macro( getIcon $cashierChannelType $instId)$instId$cashierChannelTypeTool.getShortFormat($cashierChannelType)#end
+
+##获取收银台渠道的加密后的token值。
+#macro( getChannelToken $cashierChannel)$cashierChannelTokenTool.generateChannelToken($cashierChannel)#end
+
+##将收银台渠道类型枚举翻译为js（触发默认显示tab的js）接受的string。
+#macro( getPayMethodStr $cashierChannelType)$payMethodTool.getPayMethodStr($cashierChannelType)#end
+
+##判断浮层中银行（卡通和网银）是否全部包含在支付行为的recordList中。
+#macro( hasMoreBankCards $recordList $cartoonList $ebankList)$bankCardSizeCheckTool.hasMoreBankCards($recordList,$cartoonList,$ebankList)#end
+
+##裁剪邮箱。
+#macro( trimEmail $email)$emailAndNameTrimTool.trimEmail($email)#end
+
+##裁剪Money。
+#macro( trimMoney $money)$stringUtil.trim($money.toString())#end
+
+##日期格式化
+#macro(VMDateFormat $date $format)
+    #if($date)
+        $!dateUtil.format($date, $format)
+    #end
+#end
+
+

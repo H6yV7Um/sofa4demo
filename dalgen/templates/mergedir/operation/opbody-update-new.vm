@@ -1,0 +1,49 @@
+{
+## check parameters
+#if (${operation.paramType} == "object")
+    	if (${operation.params.get(0).name} == null) {
+    		throw new IllegalArgumentException("Can't update by a null data object.");
+    	}
+#end
+## prepare parameters
+#if (${operation.params.size()} == 0)
+#set ($paramName = "null")
+
+#elseif (${operation.params.size()} == 1)
+#if (${operation.param.javaTypePrimitive})
+        ${operation.param.simpleJavaTypeForPrimitive} param = new ${operation.param.simpleJavaTypeForPrimitive}(${operation.param.name});
+#set ($paramName = "param")
+
+#else
+#set ($paramName = ${operation.param.name})
+
+#end
+#else
+        Map param = new HashMap();
+
+#foreach ($param in ${operation.params})
+#if ($param.javaTypeForPrimitive)
+        param.put("${param.name}", new ${param.simpleJavaTypeForPrimitive}(${param.name}));
+#else
+        param.put("${param.name}", ${param.name});
+#end   
+#end
+        ##//截取mapping中where之前语句
+		##String oriSql = "${operation.mappedStatementSql}"; 
+		##int startWhere = StringUtil.indexOfAny(oriSql,new String[] {"where","WHERE"});
+		##String ret = StringUtil.substring(oriSql,0,startWhere);
+#if(${table.getTableConfig().bConfidentiality()} == true)
+	    //如果做了机密性保护=================================
+		methodUtils.getConfResultForUpdate(${table.getTableConfig().getConfidentiality()},param);
+#end
+#if(${table.getTableConfig().bIntegrity()} == true)	
+	  //如果做了完整性保护===============================
+		methodUtils.getIntegResultForUpdate(${table.getTableConfig().getIntegrity()},param);
+#end
+#set ($paramName = "param")
+#end
+## execute update and return
+
+        return getSqlMapClientTemplate().update("${operation.mappedStatementId}", ${paramName});
+    }
+

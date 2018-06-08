@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://schema.alipay.com/sofa/schema/service"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://schema.alipay.com/sofa/schema/service http://schema.alipay.com/sofa/sofa-service-4-0-0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+
+
+    #if ($is_test==true)
+    <bean id="sampleService"
+          class="com.alipay.mvcdemo.SampleServiceImpl"/>
+    #else
+    <bean id="sampleService"
+          class="com.alipay.mvcdemo.SampleServiceImpl2"/>
+    #end
+    <bean id="sampleService2"
+          class="com.alipay.mvcdemo.SampleServiceImpl2"/>
+
+    <sofa:reference id="sampleTrService" interface="com.alipay.mvcdemo.SampleTrService">
+        <sofa:binding.tr>
+            <sofa:global-attrs timeout="5000"/>
+        </sofa:binding.tr>
+    </sofa:reference>
+
+    <sofa:publisher id="uniformEventPublisher" group="P_mvcdemo_service">
+        <sofa:channels>
+            <sofa:channel value="TP_DEFAULT_UNIFORM_EVENT"/>
+        </sofa:channels>
+        <sofa:binding.msg_broker/>
+    </sofa:publisher>
+
+    <sofa:consumer id="consumerService" group="S_tutorial_jiusui">
+        <sofa:listener ref="uniformEventMessageListener"/>
+        <sofa:channels>
+            <sofa:channel value="TP_DEFAULT_UNIFORM_EVENT">
+                <sofa:event eventType="direct" eventCode="EC_TUTORIAL_JIUSUI" persistence="false"/>
+            </sofa:channel>
+        </sofa:channels>
+        <sofa:binding.msg_broker/>
+    </sofa:consumer>
+
+    <!--<bean id="uniformEventPublisherService" class="com.alipay.mvcdemo.msgBroker.UniformEventPublisherService"/>-->
+
+    <context:component-scan base-package="com.alipay.mvcdemo"/>
+
+</beans>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uri-config>
+	<content-uri name="homeServer" expose="true">
+		<serverURI>${core_protocol}://${core_domainName}:${core_web_port}
+		</serverURI>
+	</content-uri>
+
+	<content-uri name="imageServer" expose="true">
+		<serverURI>http://img.alipay.net:80</serverURI>
+	</content-uri>
+
+	<uri name="javaUserServer">
+		<serverURI>${core_protocol}://${core_domainName}:${core_web_port}
+		</serverURI>
+	</uri>
+
+	<component-uri name="loginModule" expose="true" extends="javaUserServer">
+		<contextPath>/</contextPath>
+		<carPath>login</carPath>
+	</component-uri>
+
+	<component-uri name="userLoginPageLink" expose="true" extends="loginModule">
+		<path>user</path>
+		<target>login.vm</target>
+	</component-uri>
+
+</uri-config>

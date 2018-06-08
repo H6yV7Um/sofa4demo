@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/biz/service-impl/mvcdemo-biz-service-impl.iml" filepath="$PROJECT_DIR$/app/biz/service-impl/mvcdemo-biz-service-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/biz/shared/mvcdemo-biz-shared.iml" filepath="$PROJECT_DIR$/app/biz/shared/mvcdemo-biz-shared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/common/dal/mvcdemo-common-dal.iml" filepath="$PROJECT_DIR$/app/common/dal/mvcdemo-common-dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/common/service/facade/mvcdemo-common-service-facade.iml" filepath="$PROJECT_DIR$/app/common/service/facade/mvcdemo-common-service-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/common/service/integration/mvcdemo-common-service-integration.iml" filepath="$PROJECT_DIR$/app/common/service/integration/mvcdemo-common-service-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/common/util/mvcdemo-common-util.iml" filepath="$PROJECT_DIR$/app/common/util/mvcdemo-common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/core/model/mvcdemo-core-model.iml" filepath="$PROJECT_DIR$/app/core/model/mvcdemo-core-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/core/service/mvcdemo-core-service.iml" filepath="$PROJECT_DIR$/app/core/service/mvcdemo-core-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/test/mvcdemo-test.iml" filepath="$PROJECT_DIR$/app/test/mvcdemo-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/web/home/mvcdemo-web-home.iml" filepath="$PROJECT_DIR$/app/web/home/mvcdemo-web-home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sofaWebDemo.iml" filepath="$PROJECT_DIR$/sofaWebDemo.iml" />
+    </modules>
+  </component>
+</project>

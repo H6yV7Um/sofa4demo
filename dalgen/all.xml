@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="idalgen" default="release" basedir=".">
+
+    <!-- properties for directory -->
+    <property name="dir.target" value="${basedir}/target"/>
+    <property name="appname" value="dalgen"/>
+    <property name="module" value="dalgen_test"/>
+    <!--目标代码目录-->
+    <property name="dir.deploy" value="${basedir}/../../app/common/dal/src/main"/>
+
+    <!-- properties for middlegen plugin -->
+    <!--模版目录-->
+    <property name="middlegen.templates" value="../templates"/>
+    <!--单个模块配置文件目录-->
+    <property name="middlegen.config.dir" value="${basedir}/config"/>
+    <property name="middlegen.destination" value="${dir.deploy}"/>
+    <!--单个模块指定加载哪些表-->
+    <property name="middlegen.config.file" value="${middlegen.config.dir}/dal-config.xml"/>
+    <!--单个模块的特有属性-->
+    <loadproperties srcFile="${middlegen.config.dir}/module.properties"/>
+    <!--数据源驱动-->
+    <property name="database.driver" value="com.mysql.jdbc.Driver"/>
+    <!--生成代码的包路径-->
+    <property name="middlegen.package" value="com.alipay.${appname}.common.dal.${module}.auto"/>
+    <property name="middlegen.package.dir" value="com/alipay/${appname}/common/dal/${module}/auto"/>
+
+    <target name="middlegen">
+
+        <taskdef name="middlegen" classname="middlegen.MiddlegenTask" classpath="${classpath.main}"/>
+        <input message="请输入目标表名,多表以逗号分隔,全表生成请输入'*',只生成Sequence请输入'seq': " addproperty="tabs"/>
+        <echo message="DAL配置文件：${middlegen.config.file}."/>
+        <echo message="开始自动生成DAL..."/>
+
+        <mkdir dir="${middlegen.destination}"/>
+        <middlegen configfile="${middlegen.config.file}" classpath="${classpath.main}" runModel="SOFA" tabs="${tabs}"
+                   appname="${appname}" databaseurl="${database.url}" driver="${database.driver}"
+                   username="${database.userid}" password="${database.password}" schema="${database.schema}"
+                   business="${module}" prefsdir="${dir.target}">
+
+            <iwallet destination="" mergedir="${middlegen.templates}/mergedir" package="${middlegen.package}">
+
+                <!-- 为每一张表生成一个数据对象类 -->
+                <fileproducer destination="${middlegen.destination}/java/${middlegen.package.dir}"
+                              template="${middlegen.templates}/do.vm" filename="dataobject/{0}DO.java"/>
+
+                <!-- 为每一张表生成一个DAO接口 -->
+                <fileproducer destination="${middlegen.destination}/java/${middlegen.package.dir}"
+                              template="${middlegen.templates}/dao.vm" filename="daointerface/{0}DAO.java"/>
+
+                <!-- 为每一张表生成ibatis DAO实现 -->
+                <fileproducer destination="${middlegen.destination}/java/${middlegen.package.dir}"
+                              template="${middlegen.templates}/ibatis.vm" filename="ibatis/Ibatis{0}DAO.java"/>
+
+                <!-- 为每一张表生成一个sqlmapping文件 -->
+                <fileproducer destination="${middlegen.destination}/resources"
+                              template="${middlegen.templates}/table-sqlmap-mapping.vm"
+                              filename="sqlmap/${module}/auto/{0}-sqlmap-mapping.xml"/>
+
+                <!-- 生成ibatis的配置文件-->
+                <fileproducer destination="${middlegen.destination}/resources"
+                              template="${middlegen.templates}/sqlmap.vm"
+                              filename="sqlmap/${module}/sqlmap-${module}-auto.xml"/>
+
+                <!-- 生成DAO beans的Spring配置文件 -->
+                <fileproducer destination="${middlegen.destination}/resources/META-INF/spring"
+                              template="${middlegen.config.dir}/beans-dal-dao.vm" filename="${module}-auto-bean.xml"/>
+            </iwallet>
+        </middlegen>
+        <echo message="DAL生成已成功!"/>
+    </target>
+
+    <target name="clean-perf" depends="" description="">
+        <mkdir dir="${dir.target}"/>
+        <delete>
+            <fileset dir="${dir.target}">
+                <include name="**/*.properties"/>
+            </fileset>
+            <fileset dir="${basedir}">
+                <include name="**/*.log"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="clean" depends="clean-perf" description="clean all generated stuff"/>
+
+    <!-- The default target to use -->
+    <target name="release" depends="clean,middlegen" description=""/>
+</project>

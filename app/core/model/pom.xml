@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>com.alipay.mvcdemo</groupId>
+        <artifactId>mvcdemo-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alipay.mvcdemo</groupId>
+    <artifactId>mvcdemo-core-model</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Alipay mvcdemo-core-model</name>
+    <description>Alipay mvcdemo-core-model</description>
+    <url>http://home.alipay.net</url>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- project depends -->
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-common-service-integration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-common-service-facade</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-common-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alipay.mvcdemo</groupId>
+            <artifactId>mvcdemo-common-util</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

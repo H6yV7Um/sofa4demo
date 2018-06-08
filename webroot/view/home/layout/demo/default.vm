@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body>
+
+$tile.setTemplate("demo/userInfo.vm").setParameter("userId","$!{uid}");
+
+#parse($!__screen)
+
+
+</body>
+</html>

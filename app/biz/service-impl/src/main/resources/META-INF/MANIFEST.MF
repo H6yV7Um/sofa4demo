@@ -1,0 +1,2 @@
+Module-Name: com.alipay.mvcdemo.biz.service.impl
+Spring-Parent: com.alipay.mvcdemo.common.dal
